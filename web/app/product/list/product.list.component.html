@@ -1,0 +1,23 @@
+<div *ngFor="let product of products" class="row">
+  <div class="panel panel-primary col-md-8 col-sm-8" >
+    <div class="panel-heading">
+      <h2 class="panel-title">{{product.ProductId }}</h2>
+    </div>
+    <div class="panel-body row">
+      <div class="col-md-6 col-sm-6">
+        <p class="student-name"> {{product. name | uppercase}} </p>
+        <div class="row">
+          <div class="col-sm-offset-1 ">
+            <button type="button" class="btn btn-primary btn-xs col-md-1" (click)="downQuantity(product)">-</button>
+            <input type="text" class="col-md-1" [(ngModel)]="product.ProductAmount"/>
+            <button type="button" class="btn btn-primary btn-xs col-md-1" (click)="upQuantity(product)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="img-responsive" [src]="product.image" [title] = "product.name" (click)="showDetail(product)" >
+      </div>
+    </div>
+  </div>
+</div>
+
